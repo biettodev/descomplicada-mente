@@ -1,0 +1,18 @@
+<RCC>
+  <qresource prefix="movies"/>
+  <qresource prefix="icons">
+    <file>ajuda.png</file>
+    <file>biblioteca.png</file>
+    <file>chat.svg</file>
+    <file>config.svg</file>
+    <file>conteudo.png</file>
+    <file>emocoes.png</file>
+    <file>home.png</file>
+    <file>login.png</file>
+    <file>notificacao.png</file>
+    <file>raiva.png</file>
+  </qresource>
+  <qresource prefix="logo">
+    <file>logo-cerebro.png</file>
+  </qresource>
+</RCC>
