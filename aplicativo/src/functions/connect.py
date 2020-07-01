@@ -1,14 +1,15 @@
 import mysql.connector
 
 def connection():
-    conn = mysql.connector.connect(
-        host = 'localhost',
-        user = 'root',
-        passwd = 'usbw',
-        database = 'ds'
-                            )
-    if conn:
+    try:
+        conn = mysql.connector.connect(
+            host = 'localhost',
+            user = 'root',
+            passwd = 'usbw',
+            database = 'dm'
+                                )
+        print('Conexão com Banco de Dados criada.')
         return conn
-        print('Conectado ao Banco de Dados com sucesso.')
-    else:
-        print('Erro com Banco de Dados.')
+    except mysql.connector.Error:
+        print('Não foi possível acessar o banco.')
+        return False

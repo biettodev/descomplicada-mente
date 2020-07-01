@@ -6,18 +6,18 @@
 	}
 	sleep(2);
 	include_once "../funcoes/conexao.php";
-	include_once "../funcoes/funcoes.php";
-	$id_filme = (int)$_POST['filme_id'];
-	$id_usuario = (int)$_SESSION['id_usuario'];
+	include_once "../funcoes/model_movies.php";
+	$id_movie = (int)$_POST["id_movie"];
+	$id_user = (int)$_SESSION["id_user"];
 	
-	if(!verificar_clicado($id_filme, $id_usuario)){
-		if(adicionar_like($id_filme, $id_usuario)){
-			echo 'sucesso';
+	if(!verify_clicked($id_movie, $id_user)){
+		if(adicionar_like($id_movie, $id_user)){
+			echo "sucesso";
 			
 		}else{
-			echo 'erro';
+			echo "erro";
 		}
 	}else{
-		echo 'erro';
+		echo "erro";
 	}
 ?>

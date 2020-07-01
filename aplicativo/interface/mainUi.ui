@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>360</width>
+    <width>560</width>
     <height>550</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>360</width>
+    <width>560</width>
     <height>550</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>360</width>
+    <width>560</width>
     <height>550</height>
    </size>
   </property>
@@ -50,13 +50,13 @@ QWidgets{
   <widget class="QWidget" name="centralwidget">
    <property name="minimumSize">
     <size>
-     <width>360</width>
+     <width>560</width>
      <height>550</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>360</width>
+     <width>560</width>
      <height>550</height>
     </size>
    </property>
@@ -65,19 +65,19 @@ QWidgets{
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>360</width>
+      <width>560</width>
       <height>550</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>360</width>
+      <width>560</width>
       <height>550</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>360</width>
+      <width>560</width>
       <height>550</height>
      </size>
     </property>
@@ -446,7 +446,7 @@ QPushButton{
      <widget class="QFrame" name="opcoes">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>-20</x>
         <y>40</y>
         <width>400</width>
         <height>31</height>
@@ -463,7 +463,7 @@ QPushButton{
         <rect>
          <x>-10</x>
          <y>-10</y>
-         <width>381</width>
+         <width>391</width>
          <height>51</height>
         </rect>
        </property>
@@ -681,19 +681,19 @@ QPushButton{
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>360</width>
+      <width>560</width>
       <height>550</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>360</width>
+      <width>560</width>
       <height>550</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>360</width>
+      <width>560</width>
       <height>350</height>
      </size>
     </property>
@@ -731,15 +731,17 @@ QPushButton{
     <widget class="QFrame" name="frLogo">
      <property name="geometry">
       <rect>
-       <x>-20</x>
-       <y>-50</y>
-       <width>400</width>
-       <height>500</height>
+       <x>20</x>
+       <y>-31</y>
+       <width>531</width>
+       <height>611</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">QFrame{
-	image: url(:/logo/logo-cerebro.png);
+	background-image: url(:/logo/logo-cerebro.png) 90% 90%;
+	background-repeat: no-repeat;
+	background-size:  90% 90%;
 }
 </string>
      </property>

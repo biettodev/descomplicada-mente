@@ -1,0 +1,83 @@
+url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200");
+
+*{
+	outline: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	background-color: #E5E5E5;
+	font: normal 12pt Helvetica;
+	text-align: center;
+}
+
+a{
+	bottom: 30px;
+	font-weight: 500;
+	color: #444;
+	text-decoration: none;
+}
+
+div#interface{
+	background-color: #A7A7A7;
+	margin: 150px auto;
+	padding: 5px 2px 0px 2px;
+	line-height: 25px;
+	min-height: 410px;
+	width: 90%;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+}
+
+div#interface .content-type{
+	width: 108px;
+	height: 40px;
+	background-color: rgb(239, 239, 239);
+	color: rgb(74, 74, 74);
+	border: none;
+	text-transform: uppercase;
+	border-radius: 8px;
+	margin: 8px;
+	font-weight: bold;
+}
+
+div#interface .content-type span{
+	color: rgb(74, 74, 74);
+	font-size: 20px;
+}
+
+div#interface h1{
+	margin-top: 18px;
+	color: #000;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 12px 0px;
+}
+
+div#interface #content-container{
+	background-color: white;
+	width: 96%;
+	border-radius: 2px;
+	margin: 6px auto;
+	flex: 1;
+}
+
+div#interface #content-container #content-list{
+	display: grid;
+	list-style: none;
+	grid-template-columns: 100px 100px;
+	gap: 14px;
+}
+
+div#interface #content-container #content-list a{
+	width: 108px;
+    height: 108px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}

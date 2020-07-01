@@ -27,20 +27,19 @@
 	<fieldset>
 		<?php
 			include_once "../funcoes/conexao.php";
+			include_once "../funcoes/model_users.php";
 			
-			//Registros
-			$nome = $_GET['nome'];
+			$name = $_GET['name'];
 			$email = $_GET['email'];
-			$senha = $_GET['senha'];
-			$record = mysql_query("INSERT INTO `users` (nome_u, email, senha)
-			VALUES('$nome', '$email', '$senha')");
-			if($record){
+			$pass = $_GET['password'];
+			
+			$create_result = post_new_user($name, $email, $pass);
+			
+			if($create_result){
 				echo "Seu cadastro foi realizado com sucesso! </br>";
 			}else{
-				echo "Error!</br>";
+				echo "Erro!</br>";
 			}
-			
-			//$conn->close();
 		?>
 		<a href="../cadastro.html">Voltar</a>
 		<a href="../login.html">Login</a>

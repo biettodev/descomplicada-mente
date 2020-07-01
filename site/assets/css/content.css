@@ -1,0 +1,67 @@
+div#wrapper{
+	background-color: white;
+	/* margin: 25px 25px; */
+}
+
+div#wrapper #main .thumbnails ul{
+	display: grid;
+    grid-template-columns: repeat(4, 1fr);
+	gap: 12px;
+	list-style: none;
+	margin: 25px 0;
+}
+
+div#wrapper #main .thumbnails li{
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(239, 239, 239);
+	border-radius: 6px;
+	width: 240px;
+	padding: 6px;
+	align-items: center;
+	opacity: 0.8;
+}
+
+div#wrapper #main .thumbnails li:hover{
+	opacity: 1;
+	box-shadow: 2px 2px 2px #C284EB;
+}
+
+div#wrapper #main .thumbnails .info{
+	display: flex;
+	flex-direction: row;
+	margin-top: 6px;
+}
+
+div#wrapper #main .thumbnails .info span{
+	margin: 0 2px;
+}
+
+div#wrapper #main .thumbnails img{
+	width: 100%;
+	border-radius: 4px;
+}
+
+div#wrapper #main .thumbnails a{
+	background-color: #C284EB;
+	padding: 10px;
+	border-radius: 6px;
+	color: white;
+	font-family: Arial;
+}
+
+div#wrapper #footer{
+	text-align: center;
+	color: #C284EB;
+}
+
+div#wrapper #footer .icons{
+	display: inline-flex;
+	list-style: none;
+	padding: 0;
+}
+
+div#wrapper #footer .icons img{
+	width: 60px;
+	height: 60px;
+}

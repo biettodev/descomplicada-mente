@@ -1,10 +1,12 @@
-from PySide2 import QtCore, QtGui, QtWidgets
-from mainUi import Ui_DescomplicadaMente
-
-from pages.Login.login import loga
-from pages.Home.home import configEmoções, configConteudos, configFeed, alterarEstilo, alterarQuadro
-
-from functions.alter_screen import mudarTela
+from PySide2 import ( QtCore, QtGui, QtWidgets )
+from interfaceConfigs.mainConfig.main import ( Ui_DescomplicadaMente )
+from controllers.SessionController import ( loga )
+from functions.alter_screen import ( mudarTela )
+from interfaceConfigs.homeConfig.main import *
+from interfaceConfigs.homeConfig.emotion import *
+from interfaceConfigs.homeConfig.content import *
+from interfaceConfigs.homeConfig.feed import *
+from interfaceConfigs.homeConfig.styles import *
 
 if __name__ == '__main__':
     import sys
@@ -15,6 +17,9 @@ if __name__ == '__main__':
     ui = Ui_DescomplicadaMente()
     ui.setupUi(MainWindow)
 
+
+    loga(ui)
+    alterarQuadro(ui)
     configEmoções(ui)
     configConteudos(ui)
     configFeed(ui)
@@ -23,7 +28,7 @@ if __name__ == '__main__':
     MainWindow.show()
 
     mudarTela(ui)
-    loga(ui)
+
     alterarQuadro(ui)
 
     sys.exit(app.exec_())

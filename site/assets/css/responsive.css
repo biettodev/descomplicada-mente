@@ -1,0 +1,13 @@
+@media(max-width: 340px){
+	div#interface #content-form{ align-items: left; }
+	div#interface #content-form .dialog{ margin: 20px; display: grid; gap: 20px; }
+	div#interface #content-form fieldset input, textarea{ width: 224px; }
+}
+@media(max-width: 510px){
+	div#interface{ text-align: left; }
+	div#interface a, h1{ margin: 8px 24px; }
+	div#interface #form fieldset{ width: 90%; }
+	div#interface #form legend{ margin: 14px; }
+	div#interface div#container-admin ul{ display: flex; flex-direction: column; justify-content: center; align-items: left; }	
+}
+

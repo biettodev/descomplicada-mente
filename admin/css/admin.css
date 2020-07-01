@@ -1,0 +1,85 @@
+div#interface h1{
+	margin-top: 18px;
+	color: #000;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 12px 0px;
+}
+
+div#interface #container-admin{
+	background-color: #FFF;
+	width: 96%;
+	border-radius: 2px;
+	margin: 6px auto;
+	flex: 1;
+}
+
+div#interface #container-admin ul{
+	display: grid;
+	list-style: none;
+	grid-template-columns: 100px 100px;
+	gap: 14px;
+}
+
+div#interface #container-admin ul button{
+	width: 108px;
+    height: 108px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+div#interface #content-form.hide{
+	display: none;
+}
+
+div#interface #content-form{
+	height: 100%;
+	width: 100%;
+	background-color: #0E0A14EF;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: 400ms;
+}
+
+div#interface #content-form fieldset{
+	font-family: Arial, sans-serif;
+	border: none;
+	color: white;
+	margin-bottom: 14px;
+}
+
+div#interface #content-form fieldset .field{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+div#interface #content-form fieldset input, textarea{
+	border: none;
+	width: 324px;
+	padding: 14px;
+	border-radius: 6px;
+}
+
+div#interface #content-form textarea{
+	height: 110px;
+	padding-left: 5px;
+	resize: none;
+	font-size: 14px;
+}
+
+div#interface #content-form .dialog button{
+	border: none;
+	width: 134px;
+	padding: 14px;
+	border-radius: 6px;
+	font-size: 14px;
+}

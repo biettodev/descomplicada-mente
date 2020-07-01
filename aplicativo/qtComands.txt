@@ -1,0 +1,1 @@
+pyside2-rcc principal.qrc -o principal_rc.py

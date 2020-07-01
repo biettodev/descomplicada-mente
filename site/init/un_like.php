@@ -7,11 +7,11 @@
 	}
 	sleep(1);
 	include_once "../funcoes/conexao.php";
-	include_once "../funcoes/funcoes.php";
-	$id_filme = (int)$_POST['filme_id'];
-	$id_user = (int)$_POST['user_id'];
+	include_once "../funcoes/model_movies.php";
+	$id_movie = (int)$_POST['id_movie'];
+	$id_user = (int)$_POST['id_user'];
 
-	if(un_like($id_filme, $id_user)){
+	if(un_like($id_movie, $id_user)){
 		echo 'sucesso';
 	}else{
 		echo 'erro';

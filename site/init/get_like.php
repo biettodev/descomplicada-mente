@@ -5,8 +5,8 @@
 		header("Location: ../login.html");
 	}
 	include_once "../funcoes/conexao.php";
-	include_once "../funcoes/funcoes.php";
-	$id_filme = (int)$_POST['filme_id'];
-	$numero_de_likes = retornar_likes($id_filme);
-	echo $numero_de_likes;
+	include_once "../funcoes/model_movies.php";
+	$id_movie = (int)$_POST["id_movie"];
+	$likes_count = return_likes($id_movie);
+	echo $likes_count;
 ?>

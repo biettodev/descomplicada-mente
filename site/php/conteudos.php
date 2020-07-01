@@ -1,68 +1,100 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Sistema de Likes com PHP e Javascript</title>
-		<link href="../css/style.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="../js/jquery.js"></script>
-		<script type="text/javascript" src="../js/funcoes.js"></script>
-	</head>
-	<body>
-		<?php 
-			session_start();
-			if(!isset($_SESSION["autenticado"]))
-			{
-				header("Location: ../login.html");
-			}
-			include_once "../funcoes/conexao.php";
-			include_once "../funcoes/funcoes.php";
-			
-			$myname = $_SESSION["user"]; //Obtém o o login do usuário
-			$mypass = $_SESSION["pass"]; //Obtém a senha
-			
-		?>
-		<div id="entrar">
-		<?php 
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<title>PHP project</title>
+	
+	<link rel="stylesheet"  href="../assets/css/style3.css"/>
+	<link rel="stylesheet"  href="../assets/css/responsive.css"/>
+	<script src="https://kit.fontawesome.com/3c8c3475df.js" crossorigin="anonymous"></script>
+	
+  </head>
+  <body>
+	
+	<?php 
+		session_start();
+		if(!isset($_SESSION["autenticado"]))
+		{
+			header("Location: ../login.html");
+		}
+		include_once "../funcoes/conexao.php";
+		include_once "../funcoes/model_users.php";
+		// include_once "../funcoes/funcoes.php";
 		
-			$dados_user = get_dados_usuario($myname, $mypass); //Chamada a função que que usa os dados do usuário em um array
+		$myemail = $_SESSION["email_user"]; //ObtÃ©m o o login do usuÃ¡rio
+		$mypass = $_SESSION["pass_user"]; //ObtÃ©m a senha
 			
-			if(count($dados_user) == 0){ //Verifica se os dados existem
-				echo "Desculpe! Não foram encontrados os dados desse usuário";
-			}else{
-				foreach($dados_user as $dados){
-					echo "<h3>Bem vindo(a)! À seção de conteúdos, $myname.<br/>Seu ID é: ".$dados['user_id']."</h3>";
-					$_SESSION["id_usuario"] = $dados["user_id"];
-				}
+	?>
+	<div id="interface">
+		
+	
+	<?php 
+		
+		$dados_user = get_dados_usuario($myemail, $mypass); //Chamada a funÃ§Ã£o que que usa os dados do usuÃ¡rio em um array
+		
+		if(count($dados_user) == 0){ //Verifica se os dados existem
+			echo "Desculpe! NÃ£o foram encontrados os dados desse usuÃ¡rio";
+		}else{
+			foreach($dados_user as $dados){
+				
+				echo "<h3>Bem vindo(a) Ã  seÃ§Ã£o de conteÃºdos, {$dados["user_name"]}!</h3>";
+				$_SESSION["id_user"] = $dados["user_id"];
+				echo $_SESSION["id_user"];
 			}
+		}
 			
-		?>
-		<?php 
-			$resultados = get_filmes();
+		?>	
+		
+		<div id="content-container">
 			
-			
-			if(count($resultados) == 0){ //Verifica se a quantidade de conteúdos é igual a zero
-				echo 'Desculpe, mais não foram encontrados filmes';
-			}else{
-				echo '<ul>';
-				foreach($resultados as $filmes){ //Foreach para mostrar todos os artigos do banco
-					echo $filmes['user_liked'];
-		?>
-		<li>
-		<p><?php echo "<img src='../".$filmes['url_imagens']."' />"; ?><p>
-		<p><?php echo $filmes['titulo'];?></p> 
-			<p>
-			<?php if($filmes['user_liked'] == 0){?>
-				<a href="#" class="like" onclick="javascript:add_like(<?php echo $filmes['id_filme'];?>);">Adicionar</a> 
-			<?php  }else{?>
-				<a href="#" class="like" onclick="javascript:un_like(<?php echo $filmes['id_filme'];?>, <?php echo $_SESSION['id_usuario'];?>);">Unlike</a> 
-			<?php } ?>
-			<span id="filme_<?php echo$filmes['id_filme'];?>_like"><?php echo $filmes['likes'];?></span> gostaram disto!</p>
-		</li>
-		<?php
-				}
-				echo '</ul>';
-			}
-		?>
-		<a href="deslogar.php">Sair(logoff)</a>
-		<div>
-	</body>
+			<ul id="content-list">
+				<li>
+					<a class="content-type" href="contents/movies.php">
+						<span>
+							<i class="fas fa-film" ></i>
+						</span>
+						Filmes						
+					</a>
+				</li>
+				
+				<li>
+					<a class="content-type" href="contents/channels.php">
+						<span>
+							<i class="fas fa-video" ></i>
+						</span>
+						Canais
+					</a>
+				</li>
+				
+				<li>
+					<a class="content-type" href="contents/articles.php">
+						<span>
+							<i class="fas fa-newspaper" ></i>
+						</span>
+						Artigos
+					</a>
+				</li>
+				
+				<li>
+					<a class="content-type"  href="contents/books.php">
+						<span>
+							<i class="fas fa-book" ></i>
+						</span>
+						Livros
+					</a>
+				</li>
+			</ul>
+		</div>		
+		
+		<a href="deslogar.php">Sair</a>
+	</div>
+	
+  </body>
 </html>
+
+<?php
+	
+
+?>
