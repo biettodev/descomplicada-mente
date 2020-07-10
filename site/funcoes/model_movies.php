@@ -7,7 +7,7 @@
 		while($row = mysql_fetch_object($select)){
 			$signedUser = (int)$_SESSION["id_user"];
 			$mov_id = $row->id_filme;
-			$verify = mysql_query("SELECT `like_id` FROM `likes` WHERE user_id = '$signedUser' AND `movie_id` = '$mov_id'");
+			$verify = mysql_query("SELECT `like_id` FROM `movie_likes` WHERE user_id = '$signedUser' AND `movie_id` = '$mov_id'");
 			$usr_liked = (mysql_num_rows($verify) == 0) ? '0' : '1';
 			$movies[] = array(
 				'movie_id' => $row->id_filme,
@@ -26,7 +26,7 @@
 	function verify_clicked($movie_id, $user_id){
 		$movie_id = (int)$movie_id; //Recupera o valor do ID do filme
 		$user_id = (int)$user_id; //Recupera o valor do ID do usuário
-		$verify = mysql_query("SELECT `like_id` FROM `likes` WHERE `user_id` = '$user_id' AND movie_id = '$movie_id'");
+		$verify = mysql_query("SELECT `like_id` FROM `movie_likes` WHERE `user_id` = '$user_id' AND movie_id = '$movie_id'");
 		return (mysql_num_rows($verify) >= 1) ? true : false;
 	}
 	
@@ -37,13 +37,11 @@
 		$movie_likes_update = mysql_query("UPDATE `filmes` SET `likes` = likes+1 WHERE `id_filme` = '$movie_id'"); //Atualiza a quantidade de likes para o filme
 		
 		if($movie_likes_update){ //Verifica se foi atualizado
-			$like_insert = mysql_query("INSERT INTO `likes` (`user_id`, `movie_id`) VALUES ('$user_id','$movie_id')");
+			$like_insert = mysql_query("INSERT INTO `movie_likes` (`user_id`, `movie_id`) VALUES ('$user_id','$movie_id')");
 			if($like_insert){
-				return true;
-				
+				return true;	
 			}else{
 				return false;
-				
 			}
 		}
 	}
@@ -57,7 +55,7 @@
 	
 	function un_like($movie_id, $user_id){
 
-		$delete = mysql_query("DELETE FROM `likes` WHERE `user_id` = '$user_id' AND `movie_id` = '$movie_id'");
+		$delete = mysql_query("DELETE FROM `movie_likes` WHERE `user_id` = '$user_id' AND `movie_id` = '$movie_id'");
 		if($delete){
 			$update = mysql_query("UPDATE `filmes` SET `likes` = likes-1 WHERE `id_filme` = '$movie_id'");
 			if($update){

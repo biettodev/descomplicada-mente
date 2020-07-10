@@ -5,52 +5,54 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 	<title>PHP project</title>
-	<link rel="stylesheet"  href="css/style4.css"/>
-	<link rel="stylesheet"  href="css/content.css"/>
+	<link rel="stylesheet"  href="css/style.css"/>
+	<link rel="stylesheet"  href="css/admin.css"/>
+	<!-- <link rel="stylesheet"  href="css/content.css"/> -->
 	<link rel="stylesheet"  href="css/responsive.css"/>
 	<script src="https://kit.fontawesome.com/3c8c3475df.js" crossorigin="anonymous"></script>
 	
   </head>
   <body>
   
-	// <?php
-		// session_start();
-		// if(!isset($_SESSION["autenticado"]))
-		// {
-			// header("Location: ./login.html");
-		// }
-		// include_once "../descomplicada-mente/funcoes/conexao.php";
-		// include_once "./src/controllers/admin_controller.php";
+	<?php
+		session_start();
+		if(!isset($_SESSION["autenticado"]))
+		{
+			header("Location: ./login.html");
+		}
+		include_once "./src/models/conexao.php";
+		include_once "./src/controllers/admin_controller.php";
 		// include_once "./src/controllers/filme_controller.php";
 		
-		// $myid = $_SESSION["admin"]; //Obtém o o login do usuário
-		// $mypass = $_SESSION["pass"]; //Obtém a senha
+		$myid = $_SESSION["id_admin"]; //Obtém o o login do usuário
+		$mypass = $_SESSION["pass_admin"]; //Obtém a senha
 		
-		// $dados_admin = get_dados_admin($myid, $mypass); //Chamada a função que que usa os dados do administrador em um array
+		$dados_admin = get_admin_data($myid, $mypass); //Chamada a função que que usa os dados do administrador em um array
 		
-		// if(count($dados_admin) == 0){ //Verifica se os dados existem
-			// echo "Desculpe! Não foram encontrados os dados desse usuário";
-		// }else{
-			// foreach($dados_admin as $dados){
+		if(count($dados_admin) == 0){ //Verifica se os dados existem
+			echo "Desculpe! Não foram encontrados os dados desse usuário";
+		}else{
+			foreach($dados_admin as $dados){
 				
-	// ?>
+	?>
 	<div id="interface">
 		
 		<h1>Bem Vindo, 
 		</br>
 	<?php  
-			echo $dados["nome"];
+			echo $dados["admin_nome"];
 			$_SESSION["id_admnistrador"] = $dados["admin_id"];
 			} 
 		}
 	?>
 		</h1>
+		<p>Aqui, com privilégios de administrador, você poderá adicionar e remover conteúdos do site de forma simples e intuitiva!</p>
 		
 		<div id="container-admin">
 			
 			<ul id="content-list">
 				<li>
-					<button class="button" onclick="alertar()" id="movies">
+					<button class="button" id="movies">
 						<span>
 							<i class="fas fa-film" ></i>
 						</span>
@@ -90,6 +92,11 @@
 		<form id="content-form" class="hide" action="movie.php" method="post">
 			<fieldset>
 				<div class="field">
+					<label for="image">Adicione o caminho da imagem aqui:</label>
+					<input type="text" name="image" placeholder="Caminho da Imagem" />
+				</div>
+			
+				<div class="field">
 					<label for="title">Título do filme:</label>
 					<input type="text" name="title" placeholder="Título" />
 				</div>
@@ -114,7 +121,7 @@
 		<a href="./src/utils/deslogar.php">Sair</a>
 	</div>
 	
-	<script src="./js/scripts.js">
+	<script src="./js/scripts.js"></script>
   </body>
 </html>
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<link rel="stylesheet"  href="css/style.css"/>
+	<link rel="stylesheet"  href="css/form.css"/>
+	<link rel="stylesheet"  href="css/responsive.css"/>
+	<title>PHP project</title>
+	<script src="https://kit.fontawesome.com/3c8c3475df.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+	<div id="interface">
+	
+		<h1>Faça seu Cadastro</h1>
+		<form id="form" method="post" action="src/utils/cadastro.php">
+			<fieldset>
+			
+				<div class="data">
+					<legend>Nome:</legend>
+					<input type="text" name="adminname" placeholder="Nome" required /><br/>
+				</div>
+				
+				<div class="data">
+					<legend>Email:</legend>
+					<input type="email" name="adminemail" placeholder="Email" required /><br/>
+				</div>
+				
+				<div class="data">
+					<legend>Senha:</legend>
+					<input type="password" name="adminpass" placeholder="Senha" required /><br/>
+				</div>
+				
+				<button type="submit" class="button">
+					<span>
+						<i class="fas fa-arrow-up" ></i>
+					</span>
+					Cadastrar
+				</button>				
+				
+			</fieldset>
+			
+		</form>
+		
+		
+		<a href="login.html">
+			Voltar
+		</a>
+	</div>
+  </body>
+</html>

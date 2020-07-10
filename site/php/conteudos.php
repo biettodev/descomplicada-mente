@@ -59,17 +59,17 @@
 					</a>
 				</li>
 				
-				<li>
+				<!-- <li>
 					<a class="content-type" href="contents/channels.php">
 						<span>
 							<i class="fas fa-video" ></i>
 						</span>
 						Canais
 					</a>
-				</li>
+				</li> -->
 				
 				<li>
-					<a class="content-type" href="contents/articles.php">
+					<a class="content-type" href="contents/articles.html">
 						<span>
 							<i class="fas fa-newspaper" ></i>
 						</span>

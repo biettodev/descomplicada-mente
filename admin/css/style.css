@@ -30,6 +30,11 @@ div#interface a{
 	text-decoration: none;
 }
 
+div#interface p{
+	font-size: 18px;
+	font-weight: 500;
+}
+
 div#interface .button{
 	width: 108px;
 	height: 40px;
@@ -45,4 +50,18 @@ div#interface .button{
 div#interface .button span{
 	color: rgb(74, 74, 74);
 	font-size: 20px;
+}
+
+div#interface .dialog{
+	margin-top: 10px;
+}
+
+div#interface .dialog a{
+	border: none;
+	width: 134px;
+	padding: 14px;
+	border-radius: 6px;
+	font-size: 14px;
+	color: white;
+	background-color: #0E0A14EF;
 }

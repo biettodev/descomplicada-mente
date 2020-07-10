@@ -1,7 +1,5 @@
 <?php
-	function store($titulo, $sinopse, $autor){
-		
-		
+	function post_new_movie($imagepath, $titulo, $sinopse, $autor){
 		
 		$inserir = mysql_query("INSERT INTO `filmes`(`titulo`, `sinopse`, `autor`) VALUES ('$titulo', '$sinopse', '$autor')");
 		

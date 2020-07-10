@@ -10,20 +10,15 @@ def alterarQuadro(ui):
         CONFIGURAÇÃO DOS BOTÕES QUE ALTERAM O QUADRO DE EXIBIÇÃO
     '''
 
-    
-
     @Slot()
     def abrirFeed():
         ui.sclaFeed.raise_()    
 
     @Slot()
     def abrirConteúdos():
-        global openedCont
-        if not openedCont:
-            print('Clicou em conteúdos')
-            ui.sclaConteudos.raise_()
-            ui.opcoes_2.raise_()
-            openedCont = True
+        ui.sclaConteudos.raise_()
+        ui.opcoes_2.raise_()
+        print('Abriu conteúdos')
 
     @Slot()
     def abrirBiblioteca():
@@ -35,12 +30,8 @@ def alterarQuadro(ui):
         
     @Slot()
     def abrirEmoções():
-        global openedCont
-        if openedCont:
-            print('Clicou em emoções')
-            ui.opcoes_2.raise_()
-            openedCont = False
-
+        ui.opcoes.raise_()
+            
     @Slot()
     def abrirChat():
         webbrowser.open('https://sociedadeamigosdavida.org.br/Chatonline/', new='1')

@@ -30,14 +30,14 @@ def loga(ui):
 
         u_senha = str(ui.lnSenha.text())
 
-        select = (f"SELECT * FROM `users` WHERE `email` = %s AND `senha` = %s")
+        select = (f'SELECT * FROM `usuarios` WHERE `email` = %s AND `senha` = %s')
         
         try:
             result = cursor.execute(select, (u_email, u_senha))
             t = cursor.fetchone()
-        except NameError:
-            print('Não foi possível buscar os dados.')
-            sleep(2)
+        except:
+            print('Não foi possível buscar os dados. Verifique sua conexão com o servidor')
+            sleep(7)
             quit()
         
 

@@ -1,9 +1,13 @@
 div#interface h1{
 	margin-top: 18px;
 	color: #000;
-	font-size: 20px;
+	font-size: 20pt;
 	font-weight: bold;
 	padding: 12px 0px;
+}
+
+div#interface h2{
+	font-size: 18pt;
 }
 
 div#interface #container-admin{

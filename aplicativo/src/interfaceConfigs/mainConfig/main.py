@@ -59,7 +59,7 @@ class Ui_DescomplicadaMente(object):
         self.home.setMinimumSize(QSize(500, 550))
         self.home.setMaximumSize(QSize(500, 550))
         self.home.setStyleSheet(u"*{\n"
-"	font: 8pt \"Sitka Text\";\n"
+"	font: 10pt \"Sitka Text\";\n"
 "	background-color: rgb(13,13, 13);\n"
 "}\n"
 "QPushButton{\n"
@@ -98,6 +98,8 @@ class Ui_DescomplicadaMente(object):
         self.layConteudo_2 = QVBoxLayout(self.verticalLayoutWidget_7)
         
         contentBoardConfig(self.sclaConteudos, u"sclaConteudos", self.scrollAreaWidgetContents_3, u"scrollAreaWidgetContents_3", self.verticalLayoutWidget_7, u"verticalLayoutWidget_7", self.layConteudo_2, u"layConteudo_2")
+        
+        # self.verticalLayoutWidget_7.setGeometry(QRect(0, 0 100, 100))
         
         # NOTIFY CONTENT
         self.sclaNotificacao = QScrollArea(self.wdConteudo)
@@ -379,8 +381,6 @@ class Ui_DescomplicadaMente(object):
         self.btnEntrar.setIconSize(QSize(20, 20))
 
         self.layLogin.addWidget(self.btnEntrar)
-        
-        self.home.raise_()
 
         # ORDEM DE TABULAÇÃO
         DescomplicadaMente.setCentralWidget(self.centralwidget)

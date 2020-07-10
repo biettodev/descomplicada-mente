@@ -4,7 +4,7 @@ from controllers.SessionController import ( loga )
 from functions.alter_screen import ( mudarTela )
 from interfaceConfigs.homeConfig.main import *
 from interfaceConfigs.homeConfig.emotion import *
-from interfaceConfigs.homeConfig.content import *
+from interfaceConfigs.homeConfig.movies import *
 from interfaceConfigs.homeConfig.feed import *
 from interfaceConfigs.homeConfig.styles import *
 
@@ -17,12 +17,15 @@ if __name__ == '__main__':
     ui = Ui_DescomplicadaMente()
     ui.setupUi(MainWindow)
 
-
     loga(ui)
     alterarQuadro(ui)
+    
     configEmoções(ui)
-    configConteudos(ui)
+    
+    configMovies(ui)
+    
     configFeed(ui)
+    
     alterarEstilo(ui)
 
     MainWindow.show()
@@ -34,5 +37,6 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 
 #Login de teste
-#gabriel@hotmail.com
+
+#gabrielnascimento0713@gmail.com
 #senhordosaneis

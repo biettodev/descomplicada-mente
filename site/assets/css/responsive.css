@@ -8,6 +8,8 @@
 	div#interface a, h1{ margin: 8px 24px; }
 	div#interface #form fieldset{ width: 90%; }
 	div#interface #form legend{ margin: 14px; }
-	div#interface div#container-admin ul{ display: flex; flex-direction: column; justify-content: center; align-items: left; }	
+	div#interface div#container-admin ul{ display: flex; flex-direction: column; justify-content: center; align-items: left; }
+	div#wrapper #main .thumbnails li{ width: 100%; margin: 0 auto; }
+	div#wrapper #main .thumbnails ul{ padding: 0; display: flex; flex-direction: column; }
 }
 

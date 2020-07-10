@@ -3,7 +3,7 @@
 	<head>
 		<title>Conteúdos - Filmes</title>
 		<script type="text/javascript" src="../../js/jquery.js"></script>
-		<script type="text/javascript" src="../../js/funcoes.js"></script>
+		<script type="text/javascript" src="../../js/movies_func.js"></script>
 		<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!-- <link rel="stylesheet" href="../../assets/css/main.css" /> -->
@@ -37,6 +37,11 @@
 
 				<!-- fotos -->
 				<section class="thumbnails">
+				<div id="action">
+					<a href="../deslogar.php">Sair</a>
+					<a href="../conteudos.php">Voltar</a>
+				</div>
+				
 				<ul>
 						
 	<?php 
@@ -58,7 +63,11 @@
 				
 	<?php	
 				//Adiciona o título do filme
-				echo "<p><h1> {$movies["movie_title"]}</h1></p>"; 	
+				echo "<p><h1> {$movies["movie_title"]}</h1></p>"; 
+				
+				echo "<p><h1> {$movies["movie_description"]}...</h1></p>";
+				
+				echo "<p><h1> Dirigido por:{$movies["movie_author"]}...</h1></p>";
 	?>
 					
 	<?php 
@@ -105,6 +114,5 @@
 					</ul>
 			</footer>
 		</div>
-		<a href="../deslogar.php">Sair(logoff)</a>
 	</body>
 </html>

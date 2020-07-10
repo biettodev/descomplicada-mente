@@ -2,7 +2,7 @@
 	$host = 'localhost';
 	$user = 'root';
 	$pass = 'usbw';
-	$banco = 'ds';
+	$banco = 'dm';
 	
 	$conectar = mysql_connect($host, $user, $pass);
 	if($conectar){

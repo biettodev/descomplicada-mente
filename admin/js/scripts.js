@@ -8,7 +8,3 @@ buttonMovie.addEventListener('click', () => {
 close.addEventListener('click', () => {
 	formMovie.classList.add('hide')
 })
-
-function alertar(){
-	alert('Olá')
-}
