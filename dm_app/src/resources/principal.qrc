@@ -1,0 +1,25 @@
+<RCC>
+  <qresource prefix="movies"/>
+  <qresource prefix="icons">
+    <file>ajuda.png</file>
+    <file>sad-tear-solid.svg</file>
+    <file>angry-solid.svg</file>
+    <file>tired-solid.svg</file>
+    <file>biblioteca.png</file>
+    <file>chat.svg</file>
+    <file>config.svg</file>
+    <file>conteudo.png</file>
+    <file>film-solid.svg</file>
+    <file>book-solid.svg</file>
+    <file>newspaper-regular.svg</file>
+    <file>video-solid.svg</file>
+    <file>emocoes.png</file>
+    <file>home.png</file>
+    <file>login.png</file>
+    <file>notificacao.png</file>
+    <file>raiva.png</file>
+  </qresource>
+  <qresource prefix="logo">
+    <file>logo-cerebro.png</file>
+  </qresource>
+</RCC>
